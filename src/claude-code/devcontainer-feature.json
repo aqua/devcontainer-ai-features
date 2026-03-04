@@ -1,0 +1,16 @@
+{
+    "name": "Claude Code",
+    "id": "claude-code",
+    "version": "1.0.0",
+    "description": "Installs Claude Code, the official agentic CLI from Anthropic for coding and codebase analysis.",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Version of @anthropic-ai/claude-code to install"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
