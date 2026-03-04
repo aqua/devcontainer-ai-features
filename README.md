@@ -19,9 +19,7 @@ Add the following to your `devcontainer.json`:
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {
-            "version": "latest",
-             // Optional: Set API key here or use containerEnv/secrets
-            "apiKey": ""
+            "version": "latest"
         }
     },
     "containerEnv": {
@@ -30,22 +28,41 @@ Add the following to your `devcontainer.json`:
 }
 ```
 
-#### CLI Usage
-
-Once the container is built, you can use the `gemini-cli` command:
-
-```bash
-$ gemini-cli "What is the capital of France?"
-
-Paris is the capital of France.
-```
-
 #### Options
 
 | Option Id | Description | Type | Default |
 |-----------|-------------|------|---------|
 | `version` | Version of gemini-cli to install | string | `latest` |
 | `apiKey`  | Google API key for Gemini | string | - |
+
+---
+
+### `vercel-cli`
+
+The `vercel-cli` feature installs the Vercel CLI, which includes tools for managing Vercel projects and AI SDK scaffolds.
+
+**Repository:** `ghcr.io/siri404/devcontainer-ai-features/vercel-cli`
+
+#### Usage
+
+Add the following to your `devcontainer.json`:
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1": {
+            "version": "latest"
+        }
+    }
+}
+```
+
+#### Options
+
+| Option Id | Description | Type | Default |
+|-----------|-------------|------|---------|
+| `version` | Version of vercel CLI to install | string | `latest` |
 
 ---
 

@@ -1,0 +1,16 @@
+{
+    "name": "Vercel CLI",
+    "id": "vercel-cli",
+    "version": "1.0.0",
+    "description": "Installs the Vercel CLI for deploying and managing projects, including AI SDK scaffolds.",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Version of Vercel CLI to install"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "vercel_cli_basic": {
+        "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+        "features": {
+            "vercel-cli": {}
+        }
+    }
+}
