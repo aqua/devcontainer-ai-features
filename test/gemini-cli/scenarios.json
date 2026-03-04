@@ -1,17 +1,18 @@
 {
     "gemini_cli_basic": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "image": "mcr.microsoft.com/devcontainers/javascript-node:dev-20-bookworm",
         "features": {
             "gemini-cli": {}
-        }
+        },
+        "testScript": "./test.sh"
     },
     "gemini_cli_with_version": {
-        "image": "mcr.microsoft.com/devcontainers/base:focal",
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "gemini-cli": {
                 "version": "latest"
             }
-        }
+        },
+        "testScript": "./test.sh"
     }
 }
-

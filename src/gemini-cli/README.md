@@ -16,7 +16,6 @@ Installs the Google Gemini CLI tool for interacting with Google's Gemini AI mode
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version of gemini-cli to install | string | latest |
-| apiKey | Optional: Google API key for Gemini (can also be set via environment variable GEMINI_API_KEY) | string | - |
 
 
 

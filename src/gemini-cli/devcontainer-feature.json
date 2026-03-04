@@ -8,11 +8,6 @@
             "type": "string",
             "default": "latest",
             "description": "Version of gemini-cli to install"
-        },
-        "apiKey": {
-            "type": "string",
-            "default": "",
-            "description": "Optional: Google API key for Gemini (can also be set via environment variable GEMINI_API_KEY)"
         }
     },
     "installsAfter": [
