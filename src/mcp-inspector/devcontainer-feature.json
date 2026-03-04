@@ -1,0 +1,19 @@
+{
+    "name": "MCP Inspector",
+    "id": "mcp-inspector",
+    "version": "1.0.0",
+    "description": "Installs the Model Context Protocol (MCP) Inspector, the official tool for testing and debugging MCP servers.",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Version of @modelcontextprotocol/inspector to install"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ],
+    "forwardPorts": [
+        6274
+    ]
+}
