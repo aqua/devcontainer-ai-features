@@ -13,7 +13,13 @@
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ],
-    "forwardPorts": [
-        6274
-    ]
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": []
+        },
+        "forwardPorts": [
+            6274
+        ]
+    }
 }
