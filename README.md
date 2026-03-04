@@ -66,6 +66,66 @@ Add the following to your `devcontainer.json`:
 
 ---
 
+### `claude-code`
+
+The `claude-code` feature installs Claude Code, the official agentic CLI from Anthropic for coding and codebase analysis.
+
+**Repository:** `ghcr.io/siri404/devcontainer-ai-features/claude-code`
+
+#### Usage
+
+Add the following to your `devcontainer.json`:
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/siri404/devcontainer-ai-features/claude-code:1": {
+            "version": "latest"
+        }
+    }
+}
+```
+
+#### Options
+
+| Option Id | Description | Type | Default |
+|-----------|-------------|------|---------|
+| `version` | Version of Claude Code to install | string | `latest` |
+
+---
+
+### `mcp-inspector`
+
+The `mcp-inspector` feature installs the Model Context Protocol (MCP) Inspector, the official tool for testing and debugging MCP servers.
+
+**Repository:** `ghcr.io/siri404/devcontainer-ai-features/mcp-inspector`
+
+#### Usage
+
+Add the following to your `devcontainer.json`:
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1": {
+            "version": "latest"
+        }
+    }
+}
+```
+
+> **Note:** Port `6274` is automatically forwarded to your host to allow access to the Inspector's web interface.
+
+#### Options
+
+| Option Id | Description | Type | Default |
+|-----------|-------------|------|---------|
+| `version` | Version of MCP Inspector to install | string | `latest` |
+
+---
+
 ## Repository Structure
 
 This repository follows the [dev container Feature distribution specification](https://containers.dev/implementors/features-distribution/).

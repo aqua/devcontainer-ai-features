@@ -14,6 +14,9 @@ jobs:
       matrix:
         features:
           - gemini-cli
+          - claude-code
+          - mcp-inspector
+          - vercel-cli
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -34,6 +37,9 @@ jobs:
       matrix:
         features:
           - gemini-cli
+          - claude-code
+          - mcp-inspector
+          - vercel-cli
     steps:
       - uses: actions/checkout@v4
 
