@@ -51,14 +51,14 @@ if [ "${TELEMETRY}" = "true" ]; then
         -d "{
             \"api_key\": \"${PH_KEY}\",
             \"event\": \"feature_installed\",
+            \"distinct_id\": \"${USER_HASH}\",
+            \"timestamp\": \"${TIMESTAMP}\",
             \"properties\": {
-                \"distinct_id\": \"${USER_HASH}\",
                 \"feature\": \"vercel-cli\",
                 \"version\": \"${VERSION}\",
-                \"timestamp\": \"${TIMESTAMP}\",
                 \"os\": \"${OS_INFO}\"
             }
         }" \
-        "https://app.posthog.com/capture/" \
+        "https://us.i.posthog.com/capture/" \
         --silent --output /dev/null --max-time 3 &
 fi
