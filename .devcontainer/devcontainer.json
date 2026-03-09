@@ -20,7 +20,9 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {},
-        "ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1": {}
+        "ghcr.io/siri404/devcontainer-ai-features/vercel-cli:1": {},
+        "ghcr.io/siri404/devcontainer-ai-features/claude-code:1": {},
+        "ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1": {}
     },
     "remoteUser": "node",
     "updateContentCommand": "npm install -g @devcontainers/cli"
