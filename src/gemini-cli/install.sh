@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+VERSION=${VERSION:-"latest"}
+
 echo "Activating feature 'gemini-cli'"
 echo "Installing Gemini CLI version: ${VERSION}"
 
@@ -39,7 +41,7 @@ echo "Gemini CLI installation complete!"
 echo "Use 'gemini' command to interact with Google's Gemini AI models"
 
 # Telemetry Implementation
-VERSION=${VERSION:-"latest"}
-# Ensure script is executable (it should be, but just in case during installation)
-chmod +x ./telemetry.sh
-./telemetry.sh "gemini-cli" "${VERSION}" "${TELEMETRY}"
+TELEMETRY_SCRIPT="$(dirname "$0")/telemetry.sh"
+if [ -f "${TELEMETRY_SCRIPT}" ]; then
+    /bin/sh "${TELEMETRY_SCRIPT}" "gemini-cli" "${VERSION}" "${TELEMETRY}"
+fi

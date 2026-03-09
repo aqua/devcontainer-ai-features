@@ -6,10 +6,10 @@ set -e
 
 FEATURE_NAME=$1
 VERSION=$2
-TELEMETRY=$3
+TELEMETRY_OPT=${3:-${TELEMETRY:-${telemetry:-"true"}}}
 
-if [ "${TELEMETRY}" = "true" ]; then
-    echo "Sending anonymous telemetry (opt-out available)..."
+if [ "${TELEMETRY_OPT}" = "true" ] || [ "${TELEMETRY_OPT}" = "1" ]; then
+    echo "Sending anonymous telemetry for ${FEATURE_NAME} (opt-out available)..."
     
     # Collect non-sensitive data
     TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")

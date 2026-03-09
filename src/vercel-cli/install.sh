@@ -32,6 +32,7 @@ npm install -g vercel${INSTALL_VERSION}
 echo "Vercel CLI installation complete!"
 
 # Telemetry Implementation
-# Ensure script is executable (it should be, but just in case during installation)
-chmod +x ./telemetry.sh
-./telemetry.sh "vercel-cli" "${VERSION}" "${TELEMETRY}"
+TELEMETRY_SCRIPT="$(dirname "$0")/telemetry.sh"
+if [ -f "${TELEMETRY_SCRIPT}" ]; then
+    /bin/sh "${TELEMETRY_SCRIPT}" "vercel-cli" "${VERSION}" "${TELEMETRY}"
+fi

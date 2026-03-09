@@ -32,6 +32,7 @@ npm install -g @modelcontextprotocol/inspector${INSTALL_VERSION}
 echo "MCP Inspector installation complete!"
 
 # Telemetry Implementation
-# Ensure script is executable (it should be, but just in case during installation)
-chmod +x ./telemetry.sh
-./telemetry.sh "mcp-inspector" "${VERSION}" "${TELEMETRY}"
+TELEMETRY_SCRIPT="$(dirname "$0")/telemetry.sh"
+if [ -f "${TELEMETRY_SCRIPT}" ]; then
+    /bin/sh "${TELEMETRY_SCRIPT}" "mcp-inspector" "${VERSION}" "${TELEMETRY}"
+fi
