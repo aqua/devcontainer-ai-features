@@ -30,3 +30,8 @@ echo "Installing @anthropic-ai/claude-code package..."
 npm install -g @anthropic-ai/claude-code${INSTALL_VERSION}
 
 echo "Claude Code installation complete!"
+
+# Telemetry Implementation
+# Ensure script is executable (it should be, but just in case during installation)
+chmod +x ./telemetry.sh
+./telemetry.sh "claude-code" "${VERSION}" "${TELEMETRY}"

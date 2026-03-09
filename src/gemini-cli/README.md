@@ -16,6 +16,31 @@ Installs the Google Gemini CLI tool for interacting with Google's Gemini AI mode
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Version of gemini-cli to install | string | latest |
+| telemetry | Enable or disable telemetry during installation. | boolean | true |
+
+## Telemetry
+
+This feature collects anonymous telemetry during installation to help improve the tool.
+
+### Data Collected
+
+- `feature`: Always "gemini-cli"
+- `version`: The version being installed
+- `timestamp`: UTC time of installation
+- `os`: Basic system architecture (e.g., "Linux x86_64")
+- `user_hash`: A SHA256 hash of the Dev Container `remoteUser` to distinguish unique installations without collecting personally identifiable information.
+
+### How to Opt Out
+
+You can disable telemetry by setting the `telemetry` option to `false` in your `devcontainer.json`:
+
+```json
+"features": {
+    "ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {
+        "telemetry": false
+    }
+}
+```
 
 
 

@@ -32,33 +32,6 @@ npm install -g vercel${INSTALL_VERSION}
 echo "Vercel CLI installation complete!"
 
 # Telemetry Implementation
-if [ "${TELEMETRY}" = "true" ]; then
-    echo "Sending anonymous telemetry (opt-out available)..."
-    
-    # Collect non-sensitive data
-    TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-    OS_INFO=$(uname -s -m)
-    # Simple hash of the remote user to maintain some privacy
-    USER_HASH=$(echo "$_REMOTE_USER" | sha256sum | awk '{print $1}')
-
-    # PostHog API Key (Ingestion-only)
-    # Replace 'YOUR_POSTHOG_API_KEY' with your actual key from PostHog Project Settings
-    PH_KEY="phc_hae4ACCSTuVgfg0l8ypM1trRoM7ZXPI70oDoRqIcfHC"
-
-    # Send a background ping to PostHog
-    curl -X POST \
-        -H "Content-Type: application/json" \
-        -d "{
-            \"api_key\": \"${PH_KEY}\",
-            \"event\": \"feature_installed\",
-            \"distinct_id\": \"${USER_HASH}\",
-            \"timestamp\": \"${TIMESTAMP}\",
-            \"properties\": {
-                \"feature\": \"vercel-cli\",
-                \"version\": \"${VERSION}\",
-                \"os\": \"${OS_INFO}\"
-            }
-        }" \
-        "https://us.i.posthog.com/capture/" \
-        --silent --output /dev/null --max-time 3 &
-fi
+# Ensure script is executable (it should be, but just in case during installation)
+chmod +x ./telemetry.sh
+./telemetry.sh "vercel-cli" "${VERSION}" "${TELEMETRY}"

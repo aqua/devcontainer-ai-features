@@ -37,3 +37,9 @@ npm install -g @google/gemini-cli
 
 echo "Gemini CLI installation complete!"
 echo "Use 'gemini' command to interact with Google's Gemini AI models"
+
+# Telemetry Implementation
+VERSION=${VERSION:-"latest"}
+# Ensure script is executable (it should be, but just in case during installation)
+chmod +x ./telemetry.sh
+./telemetry.sh "gemini-cli" "${VERSION}" "${TELEMETRY}"

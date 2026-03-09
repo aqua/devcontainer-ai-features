@@ -8,6 +8,11 @@
             "type": "string",
             "default": "latest",
             "description": "Version of gemini-cli to install"
+        },
+        "telemetry": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable or disable telemetry during installation. See README.md for details."
         }
     },
     "installsAfter": [
