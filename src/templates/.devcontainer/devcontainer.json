@@ -1,0 +1,110 @@
+{
+    // A name for the dev container, which is shown in the VS Code UI.
+    "name": "Zyne AI Devcontainer",
+    // The Docker image to use as the base for the dev container.
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    // Features to add to the dev container. These are pre-packaged sets of tools and configurations.
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": 24
+        },
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/itsmechlark/features/postgresql:1": {},
+        "ghcr.io/siri404/devcontainers/postgresql-cli:latest": {},
+        "ghcr.io/siri404/devcontainers/stripe-cli:latest": {},
+        "ghcr.io/siri404/devcontainer-ai-features/gemini-cli:latest": {},
+        "ghcr.io/siri404/devcontainer-ai-features/claude-code:latest": {},
+        "ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:latest": {},
+        "ghcr.io/siri404/devcontainers/playwright:latest": {}
+    },
+    // Mounts local files or folders into the container.
+    "mounts": [
+        // Mounts the user's local .ssh directory into the container's .ssh directory,
+        // allowing the use of local SSH keys for Git operations.
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,readonly"
+    ],
+    // Arguments to pass to the 'docker run' command when creating the container.
+    // "runArgs": [
+    //     // Adds an entry to the container's /etc/hosts file, allowing it to connect
+    //     // to services running on the host machine.
+    //     "--add-host=host.docker.internal:host-gateway"
+    // ],
+    // VS Code specific customizations.
+    "customizations": {
+        "vscode": {
+            // VS Code settings to apply within the dev container.
+            "settings": {
+                "workbench.colorCustomizations": {
+                    "statusBar.background": "#00f4e4",
+                    "statusBar.foreground": "#000000"
+                },
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "dotfiles.repository": "https://github.com/zynedigital/.dotfiles",
+                "dotfiles.targetPath": "~/.dotfiles",
+                "dotfiles.installCommand": "install.sh"
+            },
+            // VS Code extensions to install in the dev container.
+            "extensions": [
+                "ms-ossdata.vscode-pgsql",
+                "google.gemini-cli-vscode-ide-companion",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    // Forward port 50000 from the devcontainer to the local machine
+    "forwardPorts": [
+        50000,
+        50001,
+        50002,
+        50003,
+        50004,
+        50005,
+        50006,
+        50007,
+        50008,
+        50009,
+        50010,
+        50011,
+        50012,
+        50013,
+        50014,
+        50015,
+        50016,
+        50017,
+        50018,
+        50019,
+        50020,
+        60000,
+        60001,
+        60002,
+        60003,
+        60004,
+        60005,
+        60006,
+        60007,
+        60008,
+        60009,
+        60010,
+        60011,
+        60012,
+        60013,
+        60014,
+        60015,
+        60016,
+        60017,
+        60018,
+        60019,
+        60020
+    ],
+    // The user to run as inside the container.
+    "remoteUser": "vscode",
+    "remoteEnv": {
+        "DOTENV_FILE": "${containerWorkspaceFolder}/.devcontainer/.env"
+    },
+    // A command to run after the container is created.
+    // This command changes the default shell for the 'vscode' user to zsh.
+    // Then, it appends a line to the '.zshrc' file to source (execute) an 'install.sh' script
+    // from a '.dotfiles' directory, which typically sets up personalized shell configurations.
+    "postCreateCommand": ".devcontainer/post-create.sh"
+}
