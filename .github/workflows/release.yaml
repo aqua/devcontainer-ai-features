@@ -20,7 +20,7 @@ jobs:
           base-path-to-features: "./src"
           generate-docs: "true"
           publish-templates: "true"
-          base-path-to-templates: "./src/templates"
+          base-path-to-templates: "./templates"
    
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
