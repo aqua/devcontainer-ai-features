@@ -1,0 +1,18 @@
+{
+    "gcloud_basic": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gcloud": {}
+        },
+        "testScript": "./test.sh"
+    },
+    "gcloud_with_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "gcloud": {
+                "version": "latest"
+            }
+        },
+        "testScript": "./test.sh"
+    }
+}

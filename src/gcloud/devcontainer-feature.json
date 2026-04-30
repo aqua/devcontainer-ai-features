@@ -1,0 +1,21 @@
+{
+    "name": "Google Cloud CLI",
+    "id": "gcloud",
+    "version": "1.0.0",
+    "description": "Installs the Google Cloud CLI (gcloud) for managing Google Cloud resources.",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Version of gcloud to install (e.g. 450.0.0)"
+        },
+        "telemetry": {
+            "type": "boolean",
+            "default": true,
+            "description": "Enable or disable telemetry during installation. See README.md for details."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "2.16.1",
+      "resolved": "ghcr.io/devcontainers/features/docker-in-docker@sha256:ce078b7bf7d9ef3bcb9813b32103795d8d72172446890b64772cbe1dec6baafd",
+      "integrity": "sha256:ce078b7bf7d9ef3bcb9813b32103795d8d72172446890b64772cbe1dec6baafd"
+    },
+    "ghcr.io/siri404/devcontainer-ai-features/claude-code:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/siri404/devcontainer-ai-features/claude-code@sha256:e01d8c69a1a863388811b56e3afe4342a3a54d5ed79a4dc088794215b75a89b2",
+      "integrity": "sha256:e01d8c69a1a863388811b56e3afe4342a3a54d5ed79a4dc088794215b75a89b2"
+    },
+    "ghcr.io/siri404/devcontainer-ai-features/gemini-cli:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/siri404/devcontainer-ai-features/gemini-cli@sha256:99754255ee3d9596430bf730c0e55475bd9d7d741845d96e6ec3c81a89fec51b",
+      "integrity": "sha256:99754255ee3d9596430bf730c0e55475bd9d7d741845d96e6ec3c81a89fec51b"
+    },
+    "ghcr.io/siri404/devcontainer-ai-features/mcp-inspector:1": {
+      "version": "1.0.1",
+      "resolved": "ghcr.io/siri404/devcontainer-ai-features/mcp-inspector@sha256:888ad0aa5439d4c3f3692b334d4b6abe19a1f293fbe2ad542d53ed483b056250",
+      "integrity": "sha256:888ad0aa5439d4c3f3692b334d4b6abe19a1f293fbe2ad542d53ed483b056250"
+    }
+  }
+}
