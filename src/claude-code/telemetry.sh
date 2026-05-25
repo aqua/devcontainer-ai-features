@@ -3,19 +3,19 @@ set -e
 
 # Generic Telemetry script for DevContainer Features
 # Usage: ./telemetry.sh <feature_name> <version> <telemetry_enabled>
+# Enable with {telemetry: "true"}.  Leaks ipgeo-precision location info.
 
 FEATURE_NAME=$1
 VERSION=$2
-TELEMETRY_OPT=${3:-${TELEMETRY:-${telemetry:-"true"}}}
+TELEMETRY_OPT=${3:-${TELEMETRY:-${telemetry:-"false"}}}
 
 if [ "${TELEMETRY_OPT}" = "true" ] || [ "${TELEMETRY_OPT}" = "1" ]; then
-    echo "Sending anonymous telemetry for ${FEATURE_NAME} (opt-out available)..."
+    echo "Sending anonymous telemetry for ${FEATURE_NAME} (disable with telemetry: \"false\")..."
     
     # Collect non-sensitive data
     TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
     OS_INFO=$(uname -s -m)
-    # Simple hash of the remote user to maintain some privacy
-    USER_HASH=$(echo "$_REMOTE_USER" | sha256sum | awk '{print $1}')
+    DISTINCT_ID=$(dd if=/dev/random bs=128 count=1 | sha256sum | awk '{print $1}')
 
     # PostHog API Key (Ingestion-only)
     PH_KEY="phc_hae4ACCSTuVgfg0l8ypM1trRoM7ZXPI70oDoRqIcfHC"
@@ -26,7 +26,7 @@ if [ "${TELEMETRY_OPT}" = "true" ] || [ "${TELEMETRY_OPT}" = "1" ]; then
         -d "{
             \"api_key\": \"${PH_KEY}\",
             \"event\": \"feature_installed\",
-            \"distinct_id\": \"${USER_HASH}\",
+            \"distinct_id\": \"${DISTINCT_ID}\",
             \"timestamp\": \"${TIMESTAMP}\",
             \"properties\": {
                 \"feature\": \"${FEATURE_NAME}\",

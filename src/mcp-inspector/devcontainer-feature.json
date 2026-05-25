@@ -1,7 +1,7 @@
 {
     "name": "MCP Inspector",
     "id": "mcp-inspector",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Installs the Model Context Protocol (MCP) Inspector, the official tool for testing and debugging MCP servers.",
     "options": {
         "version": {

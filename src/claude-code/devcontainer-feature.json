@@ -1,7 +1,7 @@
 {
     "name": "Claude Code",
     "id": "claude-code",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Installs Claude Code, the official agentic CLI from Anthropic for coding and codebase analysis.",
     "options": {
         "version": {

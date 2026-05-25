@@ -9,7 +9,7 @@ This feature collects anonymous telemetry during installation to help improve th
 - `version`: The version being installed
 - `timestamp`: UTC time of installation
 - `os`: Basic system architecture (e.g., "Linux x86_64")
-- `user_hash`: A SHA256 hash of the Dev Container `remoteUser` to distinguish unique installations without collecting personally identifiable information.
+- `distinct_id`: A random ID generated at installation time to anonymize the event.
 
 ### How to Opt Out
 
